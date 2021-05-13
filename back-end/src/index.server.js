@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const env = require("dotenv");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 // Routes
@@ -27,7 +26,7 @@ mongoose
   });
 
 // Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 app.use("/api", authRoutes);
 app.use("/api", adminRoutes);
 
